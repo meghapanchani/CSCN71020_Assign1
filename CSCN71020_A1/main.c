@@ -27,7 +27,11 @@ void main() {
 		subtract();
 		break;
 
+	default: 
+	printf("Invalid input. Please enter a valid number:\n ");
+
 	}
+	return 0;
 }
 
 void printWelcomeMenu() {
@@ -41,23 +45,44 @@ void printOptions() {
 	printf("1. Add\n");
 	printf("2. Subtract\n");
 }
-
 void add() {
 	double num1, num2, result;
-	printf("Enter the first value:");
-	scanf_s("%lf", &num1);
-	printf("Enter the second value:");
-	scanf_s("%lf", &num2);
+	printf("Enter the first value: ");
+	while (scanf_s("%lf", &num1) != 1) 
+	{
+		printf("Invalid input! Please enter a number: ");
+		while (getchar() != '\n'); 
+	}
+
+	printf("Enter the second value: ");
+	while (scanf_s("%lf", &num2) != 1)
+	{
+		printf("Invalid input! Please enter a number: ");
+		while (getchar() != '\n'); 
+	}
+
 	result = num1 + num2;
-	printf("%lf + %lf = %lf\n", num1, num2, result);
+	printf("%.2lf + %.2lf = %.2lf\n", num1, num2, result);
 }
+
 
 void subtract() {
 	double num1, num2, result;
+
 	printf("Enter the first value: ");
-	scanf_s("%lf", &num1);
+	while (scanf_s("%lf", &num1) != 1) 
+	{
+		printf("Invalid input! Please enter a number: ");
+		while (getchar() != '\n'); 
+	}
+
 	printf("Enter the second value: ");
-	scanf_s("%lf", &num2);
+	while (scanf_s("%lf", &num2) != 1) 
+	{
+		printf("Invalid input! Please enter a number: ");
+		while (getchar() != '\n'); 
+	}
+
 	result = num1 - num2;
-	printf("%lf - %lf = %lf\n", num1, num2, result);
+	printf("%.2lf - %.2lf = %.2lf\n", num1, num2, result);
 }
